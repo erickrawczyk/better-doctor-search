@@ -9,23 +9,23 @@ const userKey = '7ebf62f4ff0babbfda5853f6c6fc4292';
 const api     = new bdAPI(userKey);
 
 // serve static browser files
-app.use(express.static('browser'))
+app.use(express.static('browser'));
 
 app.get('/api/search', function (req, res) {
   if (!req.query.q) {
-    return res.status(400).send('No search query provided')
+    return res.status(400).send('No search query provided');
   }
 
   const params = {
     name: req.query.q,
     limit: 5
-  }
+  };
 
   api.findDoctor(params)
      .then(result => res.send(result.data))
-     .catch(err => res.status(500).send(`Search Error: ${err}`))
+     .catch(err => res.status(500).send(`Search Error: ${err}`));
 })
 
-app.listen(port, function () {
-  console.log('listening on port', port)
+app.listen(port, () => {
+  console.log('listening on port', port);
 })
