@@ -4,18 +4,27 @@
   "description": "BetterDoctor API Search Engine",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./**/*.unit.js"
+    "test": "mocha ./**/*.unit.js && CI=true react-scripts test --env=jsdom",
+    "start": "node index.js",
+    "client": "react-scripts start",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject"
   },
   "author": "Eric Krawczyk",
   "license": "ISC",
   "dependencies": {
     "express": "^4.15.4",
     "lodash": "^4.17.4",
-    "node-fetch": "^1.7.3"
+    "material-ui": "^0.19.1",
+    "material-ui-search-bar": "^0.4.0",
+    "node-fetch": "^1.7.3",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
   },
   "devDependencies": {
     "chai": "^4.1.2",
-    "mocha": "^3.5.3"
+    "mocha": "^3.5.3",
+    "react-scripts": "^1.0.13"
   },
   "repository": {
     "type": "git",
