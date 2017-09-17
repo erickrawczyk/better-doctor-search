@@ -1,14 +1,31 @@
-const BetterDoctorAPI = require('./modules/better-doctor');
+// initialize express
+const express = require('express');
+const app     = express();
+const port    = process.env.PORT || 3000;
 
+// initialize BetterDoctor api module
+const bdAPI   = require('./modules/better-doctor');
 const userKey = '7ebf62f4ff0babbfda5853f6c6fc4292';
-const api = new BetterDoctorAPI(userKey);
+const api     = new bdAPI(userKey);
 
-const params = {
-  name: 'george'
-}
+// serve static browser files
+app.use(express.static('browser'))
 
-api.findDoctor(params)
-   .then(console.log)
-   .catch(err => console.error('Error finding doctor:', err))
+app.get('/api/search', function (req, res) {
+  if (!req.query.q) {
+    return res.status(400).send('No search query provided')
+  }
 
+  const params = {
+    name: req.query.q,
+    limit: 5
+  }
 
+  api.findDoctor(params)
+     .then(result => res.send(result.data))
+     .catch(err => res.status(500).send(`Search Error: ${err}`))
+})
+
+app.listen(port, function () {
+  console.log('listening on port', port)
+})

@@ -9,6 +9,7 @@
   "author": "Eric Krawczyk",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.15.4",
     "lodash": "^4.17.4",
     "node-fetch": "^1.7.3"
   },
