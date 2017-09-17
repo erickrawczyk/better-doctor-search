@@ -7,5 +7,5 @@ out
 build
 
 # Node packages
-node_modules/*
+node_modules/
 package-lock.json

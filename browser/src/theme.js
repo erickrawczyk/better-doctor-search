@@ -8,5 +8,4 @@ const muiTheme = getMuiTheme({
   },
 });
 
-
 export default muiTheme;

@@ -19,13 +19,6 @@ class App extends Component {
     }
   }
 
-  componentDidMount() {
-    fetch('/api/doctors?q=george')
-      .then(res => res.json())
-      .then(console.log)
-      .catch(console.error);
-  }
-
   render() {
     return (
       <div style={this.limitedWidth}>
