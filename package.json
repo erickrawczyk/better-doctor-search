@@ -1,0 +1,23 @@
+{
+  "name": "better-doctor-search",
+  "version": "1.0.0",
+  "description": "BetterDoctor API Search Engine",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./**/*.unit.js"
+  },
+  "author": "Eric Krawczyk",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "node-fetch": "^1.7.3"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^3.5.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/erickrawczyk/better-doctor-search.git"
+  }
+}
