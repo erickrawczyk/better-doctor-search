@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 
 import SearchBar from './SearchBar'
 import Doctor from './Doctor'
