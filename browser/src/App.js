@@ -8,7 +8,6 @@ class App extends Component {
     super(props);
 
     this.state = {
-      hasResults: false,
       doctors: []
     }
 
@@ -31,10 +30,10 @@ class App extends Component {
     if (!value) return;
 
     // fetch doctors
-    fetch('/api/doctors?q=' + value)
+    fetch('/api/doctors?limit=50&q=' + value)
       .then(res => res.json())
       .then(res => {
-        this.setState(Object.assign({}, this.state, { hasResults: true, doctors: res }))
+        this.setState(Object.assign({}, this.state, { doctors: res }))
       })
       .catch(err => {
         console.error('Error Searching for Doctors:', err);
@@ -44,7 +43,7 @@ class App extends Component {
 
   render() {
     return (
-      <div style={this.state.hasResults ? this.limitedWidthTop : this.limitedWidthMiddle}>
+      <div style={this.state.doctors.length ? this.limitedWidthTop : this.limitedWidthMiddle}>
         <img
           src="wordmark.png"
           alt="BetterDoctor"

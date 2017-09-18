@@ -52,7 +52,7 @@ class SearchBar extends Component {
           <AutoComplete
             hintText="Find a Doctor"
             dataSource={this.state.dataSource}
-            onUpdateInput={debounce((val) => this.handleUpdateInput(val), 600)}
+            onUpdateInput={debounce((val) => this.handleUpdateInput(val), 500)}
             onNewRequest={(val) => this.props.submitRequest(val)}
             ref="autocomplete"
             floatingLabelText="Find a Doctor"

@@ -36,7 +36,7 @@ const Doctor = ({ doctor }) => {
 
       {/* Expanded area */}
       <CardText expandable={true}>
-        
+
         {/* bio */}
         <Subheader style={styles.subheader}>About</Subheader>
         {doctor.profile.bio || 'No information available'}

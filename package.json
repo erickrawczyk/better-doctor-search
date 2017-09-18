@@ -4,10 +4,11 @@
   "description": "BetterDoctor API Search Engine",
   "main": "server.js",
   "scripts": {
-    "test": "mocha ./**/*.unit.js && cd browser && CI=true react-scripts test --env=jsdom && cd -",
+    "test": "mocha ./**/*.unit.js && cd browser && npm run test && cd -",
     "start": "node server.js",
-    "client": "cd browser && react-scripts start",
-    "build": "cd browser && react-scripts build",
+    "server": "nodemon server.js",
+    "client": "cd ./browser && npm run start",
+    "build": "cd ./browser && npm run build",
     "postinstall": "cd browser && npm install"
   },
   "author": "Eric Krawczyk",
