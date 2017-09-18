@@ -20,7 +20,7 @@ app.get('/api/doctors', function (req, res) {
 
   const params = {
     name: req.query.q,
-    limit: 5
+    limit: +req.query.limit || 15
   };
 
   api.findDoctor(params)
