@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { RaisedButton, AutoComplete } from 'material-ui';
+import { debounce } from 'lodash';
 
 class SearchBar extends Component {
   constructor(props) {
@@ -51,7 +52,7 @@ class SearchBar extends Component {
           <AutoComplete
             hintText="Find a Doctor"
             dataSource={this.state.dataSource}
-            onUpdateInput={(val) => this.handleUpdateInput(val)}
+            onUpdateInput={debounce((val) => this.handleUpdateInput(val), 600)}
             onNewRequest={(val) => this.props.submitRequest(val)}
             ref="autocomplete"
             floatingLabelText="Find a Doctor"
