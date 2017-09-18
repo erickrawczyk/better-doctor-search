@@ -7,16 +7,19 @@ class SearchBar extends Component {
     this.state = {
       dataSource: []
     }
-    this.searchBarStyle = {
-      width: 'calc(100% - 100px)',
-      display: 'inline-block'
-    }
-    this.buttonRowStyle = {
-      display: 'inline-block',
-      width: '100px'
-    }
-    this.buttonStyle = {
-      margin: '12px'
+
+    this.styles = {
+      searchBar: {
+        width: 'calc(100% - 100px)',
+        display: 'inline-block'
+      },
+      buttonRow: {
+        display: 'inline-block',
+        width: '100px'
+      },
+      button: {
+        margin: '12px'
+      }
     }
   }
 
@@ -44,7 +47,7 @@ class SearchBar extends Component {
   render() {
     return (
       <div className="search-bar">
-        <div style={this.searchBarStyle}>
+        <div style={this.styles.searchBar}>
           <AutoComplete
             hintText="Find a Doctor"
             dataSource={this.state.dataSource}
@@ -57,11 +60,11 @@ class SearchBar extends Component {
             fullWidth={true}
           />
         </div>
-        <div style={this.buttonRowStyle}>
+        <div style={this.styles.buttonRow}>
           <RaisedButton
             label="Search"
             primary={true}
-            style={this.buttonStyle}
+            style={this.styles.button}
             onClick={() => this.search()}
           />
         </div>
