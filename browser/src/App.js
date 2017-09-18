@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import SearchBar from './SearchBar'
+import Doctor from './Doctor'
 
 class App extends Component {
   constructor(props) {
@@ -46,11 +47,13 @@ class App extends Component {
     return (
       <div style={this.state.hasResults ? this.limitedWidthTop : this.limitedWidthMiddle}>
         <img
-          src="logo.png"
+          src="wordmark.png"
           alt="BetterDoctor"
+          width="275"
           style={this.centered}
         />
-        <SearchBar submitRequest={(val) => this.submitRequest(val)} style={this.centered}/>
+        <SearchBar submitRequest={(val) => this.submitRequest(val)} style={this.centered} />
+        { this.state.doctors.map(doc => <Doctor doctor={doc} key={doc.uid} /> )}
       </div>
     );
   }

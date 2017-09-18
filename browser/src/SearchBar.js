@@ -28,6 +28,7 @@ class SearchBar extends Component {
     fetch('/api/doctors?limit=5&q=' + value)
       .then(res => res.json())
       .then(res => {
+        // concat first/lastname for autocomplete values
         const names = res.map(doctor => `${doctor.profile.first_name} ${doctor.profile.last_name}`);
         this.setState({ dataSource: names });
       })
