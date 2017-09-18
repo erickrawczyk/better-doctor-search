@@ -1,6 +1,11 @@
+# OS files
 .DS_Store
-.sass-cache
+
+# Generated files
 *.log
 out
-node_modules/*
+build
+
+# Node packages
+node_modules/
 package-lock.json

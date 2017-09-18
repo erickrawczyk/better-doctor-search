@@ -18,7 +18,7 @@ describe('BetterDoctorAPI', () => {
     });
 
     it('populates the base URL', () => {
-      expect(api.baseURL).to.equal(baseURL);      
+      expect(api.baseURL).to.equal(baseURL);
     });
 
   });

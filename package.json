@@ -2,13 +2,19 @@
   "name": "better-doctor-search",
   "version": "1.0.0",
   "description": "BetterDoctor API Search Engine",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "mocha ./**/*.unit.js"
+    "test": "mocha ./**/*.unit.js && cd browser && npm run test && cd -",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "cd ./browser && npm run start",
+    "build": "cd ./browser && npm run build",
+    "postinstall": "cd browser && npm install"
   },
   "author": "Eric Krawczyk",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.15.4",
     "lodash": "^4.17.4",
     "node-fetch": "^1.7.3"
   },
