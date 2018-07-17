@@ -9,3 +9,6 @@ build
 # Node packages
 node_modules/
 package-lock.json
+
+# Private files
+user-key.json

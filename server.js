@@ -7,7 +7,7 @@ const port    = process.env.PORT || 3001;
 
 // initialize BetterDoctor api module
 const bdAPI   = require('./modules/better-doctor');
-const userKey = '7ebf62f4ff0babbfda5853f6c6fc4292';
+const userKey = require('./user-key.json');
 const api     = new bdAPI(userKey);
 
 // serve static browser files
